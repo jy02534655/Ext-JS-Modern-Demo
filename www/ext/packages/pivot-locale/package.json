@@ -1,0 +1,60 @@
+{
+  "name": "pivot-locale",
+  "namespace": "Pivot.locale",
+  "format": "1",
+  "version": "6.5.2.463",
+  "compatVersion": "6.0.0",
+  "creator": "Sencha",
+  "summary": "Sencha Pivot locale",
+  "detailedDescription": "Localization for the pivot package",
+  "type": "code",
+  "signatures": [
+    {
+      "name": "Sencha",
+      "uuid": "1d6b0d9c-3333-4e65-885f-5b07a1fc3198",
+      "created": "2017-09-20T20:27:00Z",
+      "algorithm": "SHA1withRSA",
+      "nonce": "kL4kFMmisv8\u003d",
+      "signature": "I4DbhhqRQlTpuhUC8ks7igGo1wi57LuvDfqc7coNAjepU/pokE7Hbh36gBA1F8kxDElTF7/A2xDSNvrk+HvHiLFHRy+YCtNUnX/XnSQdUpvr17HL+6VQd9lWgHjuZTnK+wJ9ulMrU3+ShIFg9JMgf7PFBhNxqilIPBHQLeFdcc3mFCnEKus4rFU/9TAG6Zw7GkOLHxxYo+6KVGTNFYux5ld3pnvvqR/F1N201iDOCYeuRO9lQcQX8ULLItKEEepb4f0XdXkAZPgXzq8kZOpA7LsL5dnGX8H9zampnRPnDWMfw7itc6WIDSe9N05CSGgig5DgkbXETKpfhgQN9zQKiQ\u003d\u003d"
+    }
+  ],
+  "builds": {
+    "classic": {
+      "toolkit": "classic",
+      "theme": "theme-classic"
+    },
+    "modern": {
+      "toolkit": "modern",
+      "theme": "theme-neptune"
+    }
+  },
+  "framework": "ext",
+  "output": {
+    "base": "${package.dir}/build/${build.id}",
+    "js": "..",
+    "sass": ""
+  },
+  "sass": {
+    "namespace": "Ext",
+    "etc": [
+      "${package.dir}/sass/etc/all.scss",
+      "${package.dir}/${toolkit.name}/sass/etc/all.scss"
+    ],
+    "var": [
+      "${package.dir}/sass/var",
+      "${package.dir}/${toolkit.name}/sass/var"
+    ],
+    "src": [
+      "${package.dir}/sass/src",
+      "${package.dir}/${toolkit.name}/sass/src"
+    ]
+  },
+  "classpath": [
+    "${package.dir}/src",
+    "${package.dir}/${toolkit.name}/src"
+  ],
+  "overrides": [
+    "${package.dir}/overrides/${package.locale}",
+    "${package.dir}/${toolkit.name}/overrides/${package.locale}"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "name": "exporter",
+  "namespace": "Ext",
+  "format": "1",
+  "version": "6.5.2.463",
+  "compatVersion": "6.0.0",
+  "creator": "Sencha",
+  "summary": "Exports data to various formats like: Excel xml, Excel xlsx, csv, tsv, html etc",
+  "detailedDescription": "Utilities and plugins to export data in various formats and download them client-side",
+  "type": "code",
+  "requires": [
+    "core"
+  ],
+  "signatures": [
+    {
+      "name": "Sencha",
+      "uuid": "1d6b0d9c-3333-4e65-885f-5b07a1fc3198",
+      "created": "2017-09-20T20:28:51Z",
+      "algorithm": "SHA1withRSA",
+      "nonce": "5AJbNPROkNc\u003d",
+      "signature": "n77VCrvIG2QHiJ1z8KiOVb2m8UApxRFB0B+C1Tbu6bFljH46+KJzenR1jo3E3ChFOrxjh+gci0dw16r7EezBak/6RQWHmm49QNYCFu2DTaN2lR6h4GwBONC/PSJN6cQ09h8mLQuimNLYj3+OLfkCToBVoxTyKXVePzT4NPgCbKotLxg7oRm/kU6qGjz1bZMjoJGXTp4gk3GLv7qgVet6ha3viRHJ7aGhEobWqSau3Q+kyToA8m7gOuewmjGpP47PiXLvCpgNx5v0SZdQkvxwu/xix4sWPa2Kg2yCFh7rYZ6olU0kOnrnDzik8xDPpewx40iK1nMhhFuoF1kZITtsDQ\u003d\u003d"
+    }
+  ],
+  "builds": {
+    "classic": {
+      "toolkit": "classic",
+      "theme": "theme-classic"
+    },
+    "modern": {
+      "toolkit": "modern",
+      "theme": "theme-neptune"
+    }
+  },
+  "framework": "ext",
+  "output": {
+    "base": "${package.dir}/build/${build.id}"
+  },
+  "sass": {
+    "namespace": "Ext",
+    "etc": [
+      "${package.dir}/sass/etc/all.scss",
+      "${package.dir}/${toolkit.name}/sass/etc/all.scss"
+    ],
+    "var": [
+      "${package.dir}/sass/var",
+      "${package.dir}/${toolkit.name}/sass/var"
+    ],
+    "src": [
+      "${package.dir}/sass/src",
+      "${package.dir}/${toolkit.name}/sass/src"
+    ]
+  },
+  "classpath": [
+    "${package.dir}/src",
+    "${package.dir}/${toolkit.name}/src"
+  ],
+  "overrides": [
+    "${package.dir}/overrides",
+    "${package.dir}/${toolkit.name}/overrides"
+  ]
+}
