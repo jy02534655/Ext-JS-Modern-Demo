@@ -1,2 +1,2 @@
-# app/model 目录
+# app/controller 目录
 模型目录

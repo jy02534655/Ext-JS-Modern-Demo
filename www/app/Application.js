@@ -1,13 +1,10 @@
 /**
- * The main application class. An instance of this class is created by app.js when it
- * calls Ext.application(). This is the ideal place to handle application launch and
- * initialization details.
+ * 项目入口文件
  */
 Ext.define('app.Application', {
     extend: 'Ext.app.Application',
-
+    //应用命名空间
     name: 'app',
-
     quickTips: false,
     platformConfig: {
         desktop: {
@@ -15,6 +12,7 @@ Ext.define('app.Application', {
         }
     },
     launch: function () {
+        //初始化地址栏
         this.redirectTo('home');
         //初始化帮助类
         util.init();

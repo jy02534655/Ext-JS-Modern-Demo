@@ -1,5 +1,5 @@
 /*
-*跳转主控
+* 核心控制器，控制视图跳转
 */
 Ext.define('app.controller.Main', {
     extend: 'Ext.app.Controller',
@@ -12,6 +12,9 @@ Ext.define('app.controller.Main', {
         }
     },
     pushView: function (view) {
-        console.log('我是界面跳转路由');
+        console.log('我是临时变量:', config.tmpParams);
+        //移除临时变量
+        delete config.tmpParams;
+        console.log('临时变量被移除了，所以它是：', config.tmpParams);
     }
 });
