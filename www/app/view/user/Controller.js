@@ -5,6 +5,7 @@ Ext.define('app.view.user.Controller', {
     alias: 'controller.user',
     //点击登录
     onLoginClick: function (button) {
-        alert('我点击了登录按钮！');
+        //在控制层中通过redirectTo方法即可改变url
+        this.redirectTo('push/view');
     }
 });
