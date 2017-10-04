@@ -749,13 +749,12 @@ $include-ext-viewport-wp: dynamic(true);;
 $include-ext-viewport-windowsphone: dynamic(true);;
 $include-ext-window-window: dynamic(true);;
 $include-app-application: dynamic(true);;
-$include-app-model-base: dynamic(true);;
-$include-app-model-personnel: dynamic(true);;
-$include-app-store-personnel: dynamic(true);;
-$include-app-view-main-list: dynamic(true);;
-$include-app-view-main-main: dynamic(true);;
-$include-app-view-main-maincontroller: dynamic(true);;
-$include-app-view-main-mainmodel: dynamic(true);;
+$include-app-view-user-controller: dynamic(true);;
+$include-app-view-user-login: dynamic(true);;
+$include-userlogin: dynamic(true);;
+$include-ux-navigationview: dynamic(true);;
+$include-ux-navigation-bar: dynamic(true);;
+$include-ux-navigation-view: dynamic(true);;
 $output-paths: ("path": "../resources");
 
 /* ======================== ETC ======================== */
@@ -1234,19 +1233,3 @@ $relative-image-path-for-uis: $theme-material-resource-path;
 @import '../../../../../ext/modern/theme-material/sass/src/slider/Slider';
 @import '../../../../../ext/modern/theme-material/sass/src/slider/Toggle';
 @import '../../../../../ext/modern/theme-material/sass/src/tab/Bar';
-
-/* including scss file adjacent to ..\..\..\..\..\app\Application.js */
-$default-resource-root: '' !default;
-$default-resource-path: 'images' !default;
-$current-package: false;
-$current-resource-root: $default-resource-root;
-$relative-image-path-for-uis: $default-resource-path;
-@import '../../../../../app/Application';
-
-/* including scss file adjacent to ..\..\..\..\..\app\view\main\List.js */
-$default-resource-root: '' !default;
-$default-resource-path: 'images' !default;
-$current-package: false;
-$current-resource-root: $default-resource-root;
-$relative-image-path-for-uis: $default-resource-path;
-@import '../../../../../app/view/main/List';
