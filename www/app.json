@@ -187,8 +187,7 @@
      *      }
      *
      */
-    "js": [
-    {
+    "js": [{
         "path": "app.js",
         "bundle": true
     }],
@@ -310,6 +309,59 @@
     },
 
     /**
+     * Controls the output directory for build resources.  May be set with
+     * either a string:
+     *
+     *      "${workspace.build.dir}/${build.environment}/${app.name}"
+     *
+     * or an object containing values for various types of build artifacts:
+     *
+     *      {
+     *          "base": "${workspace.build.dir}/${build.environment}/${app.name}",
+     *          "page": {
+     *              "path": "../index.html",
+     *              "enable": false
+     *          },
+     *          "css": "${app.output.resources}/${app.name}-all.css",
+     *          "js": {
+     *              "path": "app.js",
+     *              // This setting constrols the output language level.  Set to 'ES6' to 
+     *              // disable the transpiler
+     *              "version": "ES5"
+     *          },
+     *          "microloader": {
+     *              "path": "microloader.js",
+     *              "embed": true,
+     *              "enable": true
+     *          },
+     *          "manifest": {
+     *              "path": "app.json",
+     *              "embed": false,
+     *              "enable": "${app.output.microloader.enable}"
+     *          },
+     *          "resources": "resources",
+     *          "slicer": {
+     *              "path": "${app.output.resources}/images",
+     *              "enable": false
+     *          },
+     *          // Setting the "enable" property of this object to a Truthy value will cause a Application Cache
+     *          // manifest file to be generated based on this files appCache object. This file will then be injected
+     *          // into the index.html file of the built application
+     *          "appCache":{
+     *              "enable": false"
+     *          }
+     *      }
+     *
+     */
+
+    "output": {
+        "base": "../docs",
+        "appCache": {
+            "enable": false
+        }
+    },
+
+    /**
     *  缓存配置
     *   "cache": {
     *       // 是否禁用缓存，为true将全局禁用
@@ -322,31 +374,22 @@
     *   }
     */
 
-    "output": {
-        "base": "${workspace.build.dir}/${build.environment}/${app.name}",
-        "appCache": {
-            "enable": false
-        }
-    },
-
-    /**
-     * 自动生成的缓存文件配置
-     */
     "cache": {
         "enable": false,
         "deltas": true
     },
 
     /**
-         * 缓存目标
-         */
+     * 自动生成的缓存文件配置
+     */
+
     "appCache": {
         /**
-         * 作用目录
+         * 缓存目标
          */
         "cache": ["index.html"],
         /**
-         * List of items in the NETWORK section
+         * 作用目录
          */
         "network": ["*"],
         /**
