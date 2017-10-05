@@ -1,6 +1,5 @@
-/*
-* 核心控制器，控制视图跳转
-*/
+//核心控制器
+//控制视图跳转等
 Ext.define('app.controller.Main', {
     extend: 'Ext.app.Controller',
     config: {
@@ -46,8 +45,16 @@ Ext.define('app.controller.Main', {
             }
         }
     },
+    //在基础容器中切换视图
     pushView: function (view) {
-        util.ePush(view);
+        //通过检测全局配置中的userData判断用户是否已经登录
+        if (!config.userData) {
+            //没有登录则强行跳转到登录界面
+            console.log('没有登录，跳转到登录界面');
+            util.ePush('userLogin');
+        } else {
+            util.ePush(view);
+        }
     },
     //展示页面
     showView: function (view) {

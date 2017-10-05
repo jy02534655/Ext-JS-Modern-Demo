@@ -24,13 +24,14 @@
     /**
      * 需要的扩展包 ( 默认是最新的).
      * font-awesome 字体图标
+     * ux ext扩展包
      * 例如,
      *
      *      "requires": [
      *          "charts"
      *      ]
      */
-    "requires": ["font-awesome"],
+    "requires": ["font-awesome", "ux"],
     /**
      * 起始页面名称（后缀可以是HTML，JSP，ASP等）。
      */

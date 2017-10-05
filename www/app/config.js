@@ -10,6 +10,13 @@ Ext.define('app.config', {
         //版本号，用于自动更新
         version: '0.1',
         //临时变量
-        tmpParams: null
+        tmpParams: null,
+        //用户信息
+        userData:null,
+        //用户
+        user: {
+            //登录
+            login: '~api/user/login'
+        }
     }
 });

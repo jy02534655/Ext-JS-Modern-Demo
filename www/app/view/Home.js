@@ -2,8 +2,8 @@
 //主页
 Ext.define('app.view.Home', {
     extend: 'Ext.Container',
-    xtype: 'home',
     requires: ['Ext.Toolbar', 'Ext.layout.VBox'],
+    xtype: 'home',
     config: {
         //当显示这个视图时，导航栏标题
         title: '首页',

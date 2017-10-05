@@ -1,14 +1,19 @@
 //视图
 //登录页
 Ext.define("app.view.user.Login", {
-    //依赖的类
-    requires: ['Ext.field.Password', 'Ext.Button', 'Ext.field.Toggle', 'Ext.layout.HBox'],
-    //别名,配置后可以通过Ext.create('userLogin')直接创建，等同于Ext.create('app.view.user.Login')
-    alternateClassName: 'userLogin',
     //继承于Ext.form.Panel
     extend: 'Ext.form.Panel',
+    //依赖的类
+    requires: ['Ext.field.Password', 'Ext.Button', 'Ext.field.Toggle', 'Ext.layout.HBox', 'Ext.Toast'],
+    //别名,配置后可以通过Ext.create('userLogin')直接创建，等同于Ext.create('app.view.user.Login')
+    alternateClassName: 'userLogin',
     //类名
     xtype: 'userLogin',
+    //监听事件
+    listeners: {
+        //视图初始化事件
+        initialize: 'onLoginInitialize'
+    },
     config: {
         //视图控制器
         controller: 'user',
@@ -18,15 +23,17 @@ Ext.define("app.view.user.Login", {
             //文本框控件
             xtype: 'textfield',
             //用于form控件取值
-            name: 'userName',
-            //提示信息
-            placeholder: '请输入账号'
+            name: 'userid',
+            label: '账号',
+            //必填项
+            required: true
         },
         {
             //密码控件，使用此控件需要配置依赖 Ext.field.Password
             xtype: 'passwordfield',
-            name: 'passWord',
-            placeholder: '请输入密码'
+            name: 'password',
+            label: '密码',
+            required: true
         },
         {
             //布局
@@ -41,7 +48,7 @@ Ext.define("app.view.user.Login", {
             items: [{
                 //togglefield控件，使用此控件需要配置依赖 Ext.field.Toggle
                 xtype: 'togglefield',
-                name: 'keepUser',
+                name: 'persist',
                 //标签文本
                 label: '记住我',
                 //文本对齐配置

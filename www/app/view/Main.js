@@ -1,8 +1,8 @@
 //登录后主容器
 Ext.define('app.view.Main', {
     extend: 'Ext.navigation.View',
-    xtype: 'main',
     alternateClassName: 'main',
+    xtype: 'main',
     config: {
         //导航栏配置
         navigationBar: {
@@ -18,7 +18,6 @@ Ext.define('app.view.Main', {
             //当显示这个视图时，导航栏标题
             title: '主页',
             xtype: 'home'
-            //html: '我是登录成功后跳转的页面'
         }]
     }
 });

@@ -188,6 +188,42 @@ Ext.define('app.util', {
             return model;
         },
 
+        //Viewport添加新项,Viewport之中始终只有一项
+        //这里的xtype参数是指视图中的alternateClassName的值
+        ePush: function (xtype) {
+            //获取容器
+            var me = Ext.Viewport,
+            //获取当前显示的视图
+            view = me.getActiveItem();
+            //根据itemId判断视图是否已经被展示了，避免重复展示
+            if (view && view.getItemId() == xtype) {
+                return;
+            }
+            //创建视图
+            view = Ext.create(xtype, {
+                itemId: xtype
+            });
+            //将视图添加到容器中，并展示
+            me.animateActiveItem(view, {
+                //视图切换动画效果
+                type: 'slide',
+                //视图切换方向
+                direction: 'left'
+            });
+        },
+        //监听Ext.Viewport,在视图切换时销毁旧的视图(需要执行一次)
+        eActiveitemchange: function () {
+            //console.log('开始监听Ext.Viewport视图切换');
+            var me = Ext.Viewport;
+            me.onAfter('activeitemchange',
+            function (t, value, oldValue, eOpts) {
+                if (oldValue) {
+                    //强制销毁，防止销毁不完全引发错误
+                    me.remove(oldValue, true);
+                }
+            });
+        },
+
         /*为Ext.Viewport添加一个正在加载数据的遮罩层(需要执行一次)*/
         addMessage: function () {
             //为Ext.Viewport添加一个遮罩层
@@ -229,44 +265,9 @@ Ext.define('app.util', {
         getMessage: function () {
             return Ext.Viewport.getMasked();
         },
-        //Viewport添加新项,Viewport之中始终只有一项
-        //这里的xtype参数是指视图中的alternateClassName的值
-        ePush: function (xtype) {
-            //获取容器
-            var me = Ext.Viewport,
-            //获取当前显示的视图
-            view = me.getActiveItem();
-            //根据itemId判断视图是否已经被展示了，避免重复展示
-            if (view && view.getItemId() == xtype) {
-                return;
-            }
-            //创建视图
-            view = Ext.create(xtype, {
-                itemId: xtype
-            });
-            //将视图添加到容器中，并展示
-            me.animateActiveItem(view, {
-                //视图切换动画效果
-                type: 'slide',
-                //视图切换方向
-                direction: 'left'
-            });
-        },
-        //监听Ext.Viewport,在视图切换时销毁旧的视图(需要执行一次)
-        eActiveitemchange: function () {
-            //console.log('开始监听Ext.Viewport视图切换');
-            var me = Ext.Viewport;
-            me.onAfter('activeitemchange',
-            function (t, value, oldValue, eOpts) {
-                if (oldValue) {
-                    //强制销毁，防止销毁不完全引发错误
-                    me.remove(oldValue, true);
-                }
-            });
-        },
-        //Viewport添加新项,Viewport之中始终只有一项
         //这里的xtype参数是指视图中的alternateClassName的值
         //重写ajax，在请求数据时自动加入请求动画遮罩(需要执行一次),如果此方法报错，请引入Ext.Ajax
+        //如果不使用jsonp记得注释掉
         overrideAjax: function () {
             var me = this,
             //st的setTime方法，task.delay(500);表示500毫秒后执行
@@ -294,6 +295,22 @@ Ext.define('app.util', {
                 me.hideMessage();
                 //延迟执行，避免遮罩消除失败无法输入
                 task.delay(500);
+            });
+        },
+        //重写jsonp，在请求数据时自动加入请求动画遮罩(需要执行一次),如果此方法报错，请引入Ext.data.JsonP
+        //如果不使用jsonp记得注释掉
+        overrideJsonP: function () {
+            var me = this;
+            Ext.define("Ext.zh.data.JsonP", {
+                override: "Ext.data.JsonP",
+                handleResponse: function () {
+                    this.callParent(arguments);
+                    me.hideMessage();
+                },
+                createScript: function () {
+                    me.showMessage();
+                    return this.callParent(arguments);
+                }
             });
         },
         //格式化字符串
