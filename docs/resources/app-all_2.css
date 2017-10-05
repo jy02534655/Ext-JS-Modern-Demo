@@ -2720,3 +2720,89 @@ body {
 .x-big .x-tabbar-body-el {
     padding: 0;
 }
+/* D:/ASPX/Instance/www/ext/packages/ux/sass/src/Gauge.scss:1 */
+.x-gauge svg {
+    display: block;
+}
+/* D:/ASPX/Instance/www/ext/packages/ux/sass/src/Gauge.scss:6 */
+.x-gauge-text {
+    position: absolute;
+    text-align: center;
+}
+/* D:/ASPX/Instance/www/ext/packages/ux/sass/var/Gauge.scss:28 */
+.x-gauge svg {
+    display: block;
+}
+/* D:/ASPX/Instance/www/ext/packages/ux/sass/var/Gauge.scss:31 */
+.x-gauge .x-gauge-track {
+    fill: #bbdefb;
+    fill: var(--base-light-color);
+    fill-opacity: 1;
+    stroke-opacity: 1;
+    stroke-width: 1;
+}
+/* D:/ASPX/Instance/www/ext/packages/ux/sass/var/Gauge.scss:39 */
+.x-gauge .x-gauge-value {
+    fill: #2196f3;
+    fill: var(--base-color);
+    fill-opacity: 1;
+    stroke: none;
+    stroke-opacity: 1;
+    stroke-width: 1;
+}
+/* D:/ASPX/Instance/www/ext/packages/ux/sass/src/rating/Picker.scss:1 */
+.ux-rating-picker {
+    overflow: hidden;
+    color: #ccc;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    opacity: 0.8;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 1;
+}
+/* D:/ASPX/Instance/www/ext/packages/ux/sass/src/rating/Picker.scss:15 */
+.ux-rating-picker-inner {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    white-space: nowrap;
+}
+/* D:/ASPX/Instance/www/ext/packages/ux/sass/src/rating/Picker.scss:28 */
+.ux-rating-picker-over.ux-rating-picker-track-over {
+    color: #ccc;
+}
+/* D:/ASPX/Instance/www/ext/packages/ux/sass/src/rating/Picker.scss:31 */
+.ux-rating-picker-over.ux-rating-picker-track-over > * > .ux-rating-picker-value {
+    display: none;
+    width: 0;
+}
+/* D:/ASPX/Instance/www/ext/packages/ux/sass/src/rating/Picker.scss:36 */
+.ux-rating-picker-over.ux-rating-picker-track-over > * > .ux-rating-picker-value:hover {
+    color: inherit;
+}
+/* D:/ASPX/Instance/www/ext/packages/ux/sass/src/rating/Picker.scss:40 */
+.ux-rating-picker-over.ux-rating-picker-track-over > * > .ux-rating-picker-tracker {
+    display: inline-block;
+}
+/* D:/ASPX/Instance/www/ext/packages/ux/sass/src/rating/Picker.scss:45 */
+.ux-rating-picker-value,
+.ux-rating-picker-tracker {
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    top: 0;
+    width: 0;
+    height: 100%;
+    color: #ffe850;
+}
+/* D:/ASPX/Instance/www/ext/packages/ux/sass/src/rating/Picker.scss:58 */
+.ux-rating-picker-tracker {
+    display: none;
+}
+/* D:/ASPX/Instance/www/ext/packages/ux/sass/src/rating/Picker.scss:62 */
+.ux-rating-picker-over {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    opacity: 1;
+}

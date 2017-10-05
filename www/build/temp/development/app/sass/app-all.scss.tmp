@@ -741,6 +741,19 @@ $include-ext-util-translatable-csstransform: dynamic(true);;
 $include-ext-util-translatable-dom: dynamic(true);;
 $include-ext-util-translatable-scrollparent: dynamic(true);;
 $include-ext-util-translatable-scrollposition: dynamic(true);;
+$include-ext-ux-gauge: dynamic(true);;
+$include-ext-ux-ajax-datasimlet: dynamic(true);;
+$include-ext-ux-ajax-jsonsimlet: dynamic(true);;
+$include-ext-ux-ajax-pivotsimlet: dynamic(true);;
+$include-ext-ux-ajax-simmanager: dynamic(true);;
+$include-ext-ux-ajax-simxhr: dynamic(true);;
+$include-ext-ux-ajax-simlet: dynamic(true);;
+$include-ext-ux-ajax-xmlsimlet: dynamic(true);;
+$include-ext-ux-event-driver: dynamic(true);;
+$include-ext-ux-event-maker: dynamic(true);;
+$include-ext-ux-event-player: dynamic(true);;
+$include-ext-ux-event-recorder: dynamic(true);;
+$include-ext-ux-rating-picker: dynamic(true);;
 $include-ext-viewport-android: dynamic(true);;
 $include-ext-viewport-default: dynamic(true);;
 $include-ext-viewport-ios: dynamic(true);;
@@ -748,13 +761,27 @@ $include-ext-viewport-viewport: dynamic(true);;
 $include-ext-viewport-wp: dynamic(true);;
 $include-ext-viewport-windowsphone: dynamic(true);;
 $include-ext-window-window: dynamic(true);;
+$include-ext-zh-data-jsonp: dynamic(true);;
 $include-app-application: dynamic(true);;
 $include-app-config: dynamic(true);;
 $include-app-controller-main: dynamic(true);;
+$include-app-data-add: dynamic(true);;
+$include-app-data-delete: dynamic(true);;
+$include-app-data-simulated: dynamic(true);;
+$include-app-data-update: dynamic(true);;
+$include-app-data-user-login: dynamic(true);;
+$include-app-model-user: dynamic(true);;
 $include-app-util: dynamic(true);;
+$include-app-view-home: dynamic(true);;
+$include-app-view-main: dynamic(true);;
+$include-app-view-used-list: dynamic(true);;
 $include-app-view-user-controller: dynamic(true);;
 $include-app-view-user-login: dynamic(true);;
 $include-config: dynamic(true);;
+$include-main: dynamic(true);;
+$include-override-field-field: dynamic(true);;
+$include-override-field-text: dynamic(true);;
+$include-usedlist: dynamic(true);;
 $include-userlogin: dynamic(true);;
 $include-util: dynamic(true);;
 $include-ux-navigationview: dynamic(true);;
@@ -998,6 +1025,23 @@ $relative-image-path-for-uis: $theme-material-resource-path;
 @import '../../../../../ext/modern/theme-material/sass/var/tab/Bar';
 @import '../../../../../ext/modern/theme-material/sass/var/grid/cell/Tree';
 
+/* including package ux */
+$ux-resource-root: 'ux' !default;
+$ux-resource-path: 'ux/images' !default;
+$current-package: 'ux';
+$current-resource-root: $ux-resource-root;
+$relative-image-path-for-uis: $ux-resource-path;
+@import '../../../../../ext/packages/ux/sass/var/Gauge';
+@import '../../../../../ext/packages/ux/sass/var/rating/Picker';
+
+/* including package ux */
+$ux-resource-root: 'ux' !default;
+$ux-resource-path: 'ux/images' !default;
+$current-package: 'ux';
+$current-resource-root: $ux-resource-root;
+$relative-image-path-for-uis: $ux-resource-path;
+@import '../../../../../ext/packages/ux/modern/sass/var/Gauge';
+
 
 /* ======================== RULE ======================== */
 
@@ -1238,3 +1282,12 @@ $relative-image-path-for-uis: $theme-material-resource-path;
 @import '../../../../../ext/modern/theme-material/sass/src/slider/Slider';
 @import '../../../../../ext/modern/theme-material/sass/src/slider/Toggle';
 @import '../../../../../ext/modern/theme-material/sass/src/tab/Bar';
+
+/* including package ux */
+$ux-resource-root: 'ux' !default;
+$ux-resource-path: 'ux/images' !default;
+$current-package: 'ux';
+$current-resource-root: $ux-resource-root;
+$relative-image-path-for-uis: $ux-resource-path;
+@import '../../../../../ext/packages/ux/sass/src/Gauge';
+@import '../../../../../ext/packages/ux/sass/src/rating/Picker';
