@@ -5,7 +5,7 @@ Ext.define("override.field.Text", {
     //根据空白提示语设置必填提示
     updatePlaceholder: function (value) {
         //如果已经配置必填提示语则不执行
-        if (value && !this.getRequiredMessage()) {
+        if (value && !this.getRequiredMessage() != '此项为必填项') {
             this.setRequiredMessage(value);
         }
         this.callParent(arguments);
