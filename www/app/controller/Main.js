@@ -106,7 +106,6 @@ Ext.define('app.controller.Main', {
                     main.setTitle(params.title);
                 }
             }
-            console.log('动画结束');
         }
     }
 });

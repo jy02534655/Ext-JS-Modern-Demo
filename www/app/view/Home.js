@@ -15,8 +15,8 @@ Ext.define('app.view.Home', {
             layout: 'hbox'
         },
         items: [{
-            //宽
-            width: '75%',
+                height: '8em',
+                margin: '0 0 10 0',
             //第二级的items中每个元素的默认配置
             defaults: {
                 //默认为按钮类型
@@ -37,12 +37,45 @@ Ext.define('app.view.Home', {
                 redirect: 'usedList'
             },
             {
-                iconCls: 'x-fa fa-star',
-                text: '按钮2'
+                iconCls: 'x-fa fa-align-justify',
+                text: '垂直布局',
+                redirect: 'layoutVbox'
             },
             {
-                iconCls: 'x-fa fa-bookmark',
-                text: '按钮3'
+                iconCls: 'x-fa fa-bars',
+                text: '垂直布局1',
+                redirect: 'layoutVbox1'
+            },
+            {
+                iconCls: 'x-fa fa-pause',
+                text: '水平布局',
+                redirect: 'layoutHbox'
+            }]
+        },
+        {
+            //宽
+            width: '75%',
+            height: '8em',
+            defaults: {
+                xtype: 'button',
+                iconAlign: 'top',
+                action: 'redirect',
+                flex: 1
+            },
+            items: [{
+                iconCls: 'x-fa fa-list-alt',
+                text: '综合布局',
+                redirect: 'layoutVHbox'
+            },
+            {
+                iconCls: 'x-fa fa-stop',
+                text: '填充布局',
+                redirect: 'layoutFit'
+            },
+            {
+                iconCls: 'x-fa fa-book',
+                text: '卡牌布局',
+                redirect: 'layoutCard'
             }]
         },
         {
