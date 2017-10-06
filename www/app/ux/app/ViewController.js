@@ -1,6 +1,6 @@
 ﻿//扩展
 //扩展ViewController
-//除了核心控制器，所有的控制器都继承这个扩展控制器
+//所有的视图控制器都可以继承这个扩展控制器
 Ext.define('ux.app.ViewController', {
     extend: 'Ext.app.ViewController',
     //列表页被初始化

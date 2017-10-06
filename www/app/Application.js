@@ -15,6 +15,7 @@ Ext.define('app.Application', {
             quickTips: true
         }
     },
+    //引入数据源
     stores:['Used'],
     launch: function () {
         //初始化地址栏

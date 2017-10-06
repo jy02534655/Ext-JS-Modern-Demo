@@ -11,6 +11,7 @@ Ext.define('app.store.Used', {
     //数据仓库id
     //你可以通过Ext.getStore(仓库id)获取到这个模型
     //需要在Application.js或者全局控制器中通过stores:['Used']引入才能生效
+    //在移动端对于一些常用数据我们可以用这种模式来开发
     storeId: 'used',
     //是否自动加载，默认为true
     //默认不修改时，在应用启动时就会请求数据
