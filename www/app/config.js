@@ -17,6 +17,11 @@ Ext.define('app.config', {
         user: {
             //登录
             login: '~api/user/login'
+        },
+        //物品
+        used: {
+            //列表
+            list: '~api/used/list'
         }
     }
 });

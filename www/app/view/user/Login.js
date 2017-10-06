@@ -9,14 +9,14 @@ Ext.define("app.view.user.Login", {
     alternateClassName: 'userLogin',
     //类名
     xtype: 'userLogin',
+    //视图控制器
+    controller: 'user',
     //监听事件
     listeners: {
         //视图初始化事件
         initialize: 'onLoginInitialize'
     },
     config: {
-        //视图控制器
-        controller: 'user',
         //相当于css属性中的padding
         padding: '40 30 0 30',
         items: [{

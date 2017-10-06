@@ -279,14 +279,26 @@ Ext.define('app.util', {
             //监听ajax事件，开始请求时显示遮罩
             Ext.Ajax.on('beforerequest',
             function (connection, options) {
-                //如果ajax中配置了自定义属性 hidMessage为 true,则不显示遮罩
-                if (!options.hidMessage) {
+                console.log('正在请求数据...');
+                console.log('请求地址：', options.url);
+                console.log('请求方式：', options.method);
+                var params = options.params;
+                if (params) {
+                    console.log('参数：', params);
+                }
+                if (options.jsonData) {
+                    console.log('json参数：', options.jsonData);
+                }
+                //某些情况下不需要遮罩
+                //在参数里面增加isNoMask:true即可不显示遮罩
+                if (!(params && params.isNoMask)) {
                     me.showMessage('正在请求数据...');
                 }
             });
             //ajax请求成功
             Ext.Ajax.on('requestcomplete',
-            function (connection, options) {
+            function (connection,response, options) {
+                console.log('请求成功,服务端返回数据(已转为json对象)：', Ext.decode(response.responseText));
                 me.hideMessage();
             });
             //ajax请求败

@@ -1,3 +1,7 @@
+//指定ux起调目录
+Ext.Loader.setPath({
+    'ux': 'app/ux'
+});
 /**
  * 项目入口文件
  */
@@ -11,6 +15,7 @@ Ext.define('app.Application', {
             quickTips: true
         }
     },
+    stores:['Used'],
     launch: function () {
         //初始化地址栏
         this.redirectTo('home');
