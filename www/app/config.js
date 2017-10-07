@@ -21,7 +21,15 @@ Ext.define('app.config', {
         //物品
         used: {
             //列表
-            list: '~api/used/list'
+            list: '~api/used/list',
+            //新增
+            add: '~api/add',
+            //更新
+            update: '~api/update',
+            //物品类型
+            type: {
+                list: '~api/used/type'
+            }
         }
     }
 });

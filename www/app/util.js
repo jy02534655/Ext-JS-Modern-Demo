@@ -165,12 +165,55 @@ Ext.define('app.util', {
             return true;
         },
 
+        //链式
+        //model.saveModel方式
+        //使用方式util.saveModel(model).then(function(record, b){执行方法})
+        //model model
+        //只有执行成功才执行then
+        saveModel: function (model) {
+            var deferred = new Ext.Deferred(),
+            phantom = model.phantom;
+            //console.log(phantom, model.dirty);
+            //修改状态并且未做修改
+            if (!phantom && !model.dirty) {
+                console.log('模型数据无变化，直接返回消息!');
+                Ext.toast('编辑成功！');
+                //直接返回数据
+                deferred.resolve({
+                    rec: model,
+                    phantom: phantom
+                });
+            } else {
+                model.save({
+                    success: function (record, b) {
+                        Ext.toast(b.getResultSet().message);
+                        deferred.resolve({
+                            rec: record,
+                            phantom: phantom
+                        });
+                    },
+                    //表单提交失败
+                    failure: function (response, b) {
+                        //如果是修改
+                        if (!phantom) {
+                            //取消模型的更改
+                            model.reject();
+                        }
+                        try {
+                            Ext.toast(b.getResultSet().message);
+                        } catch (e) { }
+                    }
+                });
+            }
+            return deferred.promise;
+        },
+
         //验证模型
         //form  表单视图控件
         //model 模型对象
         validFormModel: function (form, model) {
-            //更新模型数据，讲表单中的数据赋给模型
-            form.updateRecord(model);
+            //更新模型数据，将表单中的数据赋给模型
+            this.updateRecord(form,model);
             var errors = model.validate(),
             //验证结果
             valid = errors.isValid(),
@@ -186,6 +229,31 @@ Ext.define('app.util', {
                 return valid;
             }
             return model;
+        },
+        //更新模型数据，将表单中的数据赋给模型
+        updateRecord: function (form, record) {
+            //获取模型已定义字段
+            var fields = record.self.fields,
+                //获取表单中的值
+                values = form.getValues(),
+                obj = {},
+                i = 0,
+                len = fields.length,
+                name;
+            //只更新模型中已定义的字段
+            for (; i < len; ++i) {
+                name = fields[i].name;
+                //如果表单中有模型对应字段的值，赋值
+                if (values.hasOwnProperty(name)) {
+                    obj[name] = values[name];
+                }
+            }
+            //模型开始编辑
+            record.beginEdit();
+            //赋值
+            record.set(obj);
+            //模型结束编辑
+            record.endEdit();
         },
 
         //Viewport添加新项,Viewport之中始终只有一项

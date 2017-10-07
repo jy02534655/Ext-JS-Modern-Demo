@@ -32,5 +32,14 @@ Ext.define('app.model.Used', {
         type: 'string',
         //默认值
         defaultValue: '内容为空'
-    }]
+    }],
+    proxy: {
+        type: 'api',
+        api: {
+            //新增
+            create: config.used.add,
+            //更新
+            update: config.used.update
+        }
+    }
 });

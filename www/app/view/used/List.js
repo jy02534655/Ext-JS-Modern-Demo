@@ -7,7 +7,9 @@ Ext.define('app.view.used.List', {
     xtype: 'usedList',
     controller: 'used',
     listeners: {
-        initialize: 'onListInitialize'
+        initialize: 'onListInitialize',
+        //监听点击事件
+        childtap: 'onListChildtap'
     },
     config: {
         title: '物品',

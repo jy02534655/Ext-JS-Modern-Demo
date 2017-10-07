@@ -1,5 +1,5 @@
 //模拟数据源
-//登录接口
+//物品列表
 Ext.define('app.data.used.List', {
     extend: 'app.data.Simulated',
     data: {

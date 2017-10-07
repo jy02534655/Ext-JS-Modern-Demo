@@ -54,7 +54,6 @@ Ext.define('app.view.Home', {
         },
         {
             //宽
-            width: '75%',
             height: '8em',
             defaults: {
                 xtype: 'button',
@@ -76,6 +75,14 @@ Ext.define('app.view.Home', {
                 iconCls: 'x-fa fa-book',
                 text: '卡牌布局',
                 redirect: 'layoutCard'
+            },
+            {
+                iconCls: 'x-fa fa-plus-circle',
+                text: '新增物品',
+                redirect: 'usedEdit',
+                //这个参数是给下一个视图的，也就是编辑视图
+                //在这里编辑和新增唯一的区别也就是标题的区别了
+                params: { title: '新增物品' }
             }]
         },
         {
