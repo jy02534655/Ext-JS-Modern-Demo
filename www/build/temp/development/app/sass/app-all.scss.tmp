@@ -800,6 +800,7 @@ $include-layoutvbox: dynamic(true);;
 $include-layoutvbox1: dynamic(true);;
 $include-main: dynamic(true);;
 $include-override-field-field: dynamic(true);;
+$include-override-field-picker: dynamic(true);;
 $include-override-field-text: dynamic(true);;
 $include-overrides-list: dynamic(true);;
 $include-overrides-panel: dynamic(true);;
