@@ -40,6 +40,5 @@ Ext.define("overrides.picker.Picker", {
         }
 
         return Ext.factory(config, 'Ext.Button', oldButton);
-    },
-
+    }
 });

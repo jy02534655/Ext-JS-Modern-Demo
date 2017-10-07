@@ -6,12 +6,5 @@ Ext.define('app.model.used.Type', {
         //名称
         name: 'name',
         type: 'string'
-    }],
-    proxy: {
-        type: 'api',
-        api: {
-            create: config.used.type.add,
-            update: config.used.type.update
-        }
-    }
+    }]
 });

@@ -15,8 +15,8 @@ Ext.define('app.view.Home', {
             layout: 'hbox'
         },
         items: [{
-                height: '8em',
-                margin: '0 0 10 0',
+            height: '8em',
+            margin: '0 0 10 0',
             //第二级的items中每个元素的默认配置
             defaults: {
                 //默认为按钮类型
@@ -82,7 +82,9 @@ Ext.define('app.view.Home', {
                 redirect: 'usedEdit',
                 //这个参数是给下一个视图的，也就是编辑视图
                 //在这里编辑和新增唯一的区别也就是标题的区别了
-                params: { title: '新增物品' }
+                params: {
+                    title: '新增物品'
+                }
             }]
         },
         {

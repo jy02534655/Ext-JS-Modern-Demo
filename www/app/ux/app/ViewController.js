@@ -41,7 +41,7 @@ Ext.define('ux.app.ViewController', {
             form = form.down('formpanel');
         }
         //验证表单数据是否正确
-        if (form.isValid()) {
+        if (form.validate()) {
             //获取当前viewModel中data数据
             model = me.getViewModel().get('data');
             //如果不是模型

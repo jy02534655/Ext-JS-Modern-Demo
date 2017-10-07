@@ -6,6 +6,7 @@ Ext.define('app.view.used.Edit', {
     alternateClassName: 'usedEdit',
     xtype: 'usedEdit',
     controller: 'used',
+    //给一个默认的viewModel，避免bind出错
     viewModel: {
     },
     listeners: {
@@ -23,6 +24,8 @@ Ext.define('app.view.used.Edit', {
             xtype: 'textfield',
             name: 'name',
             label: '标题',
+            required: true,
+            //绑定数据，编辑时使用
             bind: '{data.name}'
         },
         {
@@ -34,6 +37,7 @@ Ext.define('app.view.used.Edit', {
             displayField: 'name',
             //主键字段名称
             valueField: 'id',
+            required: true,
             //监听初始化事件，自动加载类型数据
             listeners: {
                 initialize: 'onListInitialize'
@@ -45,6 +49,7 @@ Ext.define('app.view.used.Edit', {
             xtype: 'textareafield',
             maxRows: 4,
             label: '内容',
+            required: true,
             bind: '{data.content}'
         },
         {
