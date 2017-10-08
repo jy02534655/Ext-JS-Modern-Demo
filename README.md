@@ -7,6 +7,8 @@ Sencha Cmd 版本：v6.5.2.15
 
 在线演示地址：https://jy02534655.github.io/Ext-JS-Modern-Demo/
 
+购买教程：https://item.taobao.com/item.htm?id=559595404425
+
 请使用谷歌浏览器打开，打开后按F12，然后切换为手机模拟模式
 
 注意本示例使用 sencha -sdk SDK位置 generate app --modern app 项目路径 命令生成，此命令生成的项目只有Modern包
