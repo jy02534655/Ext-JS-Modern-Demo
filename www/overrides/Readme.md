@@ -8,5 +8,7 @@
 重写Ext.plugin相关类
 ### List.js
 重写优化列表控件
+### MessageBox.js
+汉化消息弹窗
 ### Panel.js
 重写优化Ext.Panel类

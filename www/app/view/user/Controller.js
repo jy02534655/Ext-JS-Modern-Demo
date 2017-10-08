@@ -33,7 +33,7 @@ Ext.define('app.view.user.Controller', {
                     });
                 }
                 //提示消息
-                Ext.toast(response.message, 2000);
+                Ext.toast(response.message);
             });
         }
     },

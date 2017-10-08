@@ -16,7 +16,7 @@ Ext.define('app.Application', {
         }
     },
     //引入数据源
-    stores: ['Used', 'used.Type'],
+    stores: ['Used', 'used.Type', 'Share'],
     launch: function () {
         //初始化地址栏
         this.redirectTo('home');

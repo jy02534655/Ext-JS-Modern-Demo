@@ -172,7 +172,7 @@ Ext.define('app.util', {
         //只有执行成功才执行then
         saveModel: function (model) {
             var deferred = new Ext.Deferred(),
-            phantom = model.phantom;
+            phantom = model.phantom, response, message;
             //console.log(phantom, model.dirty);
             //修改状态并且未做修改
             if (!phantom && !model.dirty) {
@@ -186,7 +186,13 @@ Ext.define('app.util', {
             } else {
                 model.save({
                     success: function (record, b) {
-                        Ext.toast(b.getResultSet().message);
+                        response = b.getResultSet();
+                        if (response) {
+                            message = response;
+                        } else {
+                            message = phantom ? '新增成功！' : '编辑成功！';
+                        }
+                        Ext.toast(message);
                         deferred.resolve({
                             rec: record,
                             phantom: phantom

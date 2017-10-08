@@ -88,6 +88,30 @@ Ext.define('app.view.Home', {
             }]
         },
         {
+            height: '8em',
+            margin: '10 0 0 0',
+            width: '50%',
+            defaults: {
+                xtype: 'button',
+                iconAlign: 'top',
+                action: 'redirect',
+                flex: 1
+            },
+            items: [{
+                iconCls: 'x-fa fa-tencent-weibo',
+                text: '分享',
+                redirect: 'shareList'
+            },
+            {
+                iconCls: 'x-fa fa-calendar-plus-o',
+                text: '新增分享',
+                redirect: 'shareEdit',
+                params: {
+                    title: '新增分享'
+                }
+            }]
+        },
+        {
             //边栏控件
             xtype: 'toolbar',
             //停靠位置

@@ -57,7 +57,6 @@ Ext.define('app.view.used.Edit', {
             xtype: 'button',
             text: '保&emsp;&emsp;&emsp;存',
             ui: 'action',
-            //监听初始化事件，自动加载类型数据
             listeners: {
                 tap: 'onSave'
             }
