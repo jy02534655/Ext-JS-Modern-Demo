@@ -1,4 +1,8 @@
 /* D:/ASPX/Instance/www/ext/modern/theme-material/sass/etc/mixins/icons.scss:8 */
+.md-icon-call-made::before {
+    content: 'call_made';
+}
+/* D:/ASPX/Instance/www/ext/modern/theme-material/sass/etc/mixins/icons.scss:8 */
 .md-icon-call-merge::before {
     content: 'call_merge';
 }

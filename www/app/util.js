@@ -302,6 +302,7 @@ Ext.define('app.util', {
         addMessage: function () {
             //为Ext.Viewport添加一个遮罩层
             Ext.Viewport.setMasked({
+                transparent:true,
                 xtype: 'loadmask',
                 message: '正在请求数据...'
             });

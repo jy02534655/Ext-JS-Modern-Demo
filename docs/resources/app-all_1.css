@@ -1,3 +1,9 @@
+/* D:/ASPX/Instance/www/sass/etc/all.scss:7 */
+.x-mask.x-loading-mask .x-mask-inner .x-mask-message {
+    /*#region 样式重写*/
+    /*#region 重写遮罩*/
+    color: white;
+}
 /* D:/ASPX/Instance/www/ext/modern/theme-neptune/sass/var/Button.scss:1547 */
 .x-button-alt.x-button-decline {
     color: #fff;
@@ -15208,8 +15214,4 @@ div.x-trigger.x-grouped {
 /* D:/ASPX/Instance/www/ext/modern/theme-material/sass/etc/mixins/icons.scss:8 */
 .md-icon-call-end::before {
     content: 'call_end';
-}
-/* D:/ASPX/Instance/www/ext/modern/theme-material/sass/etc/mixins/icons.scss:8 */
-.md-icon-call-made::before {
-    content: 'call_made';
 }
