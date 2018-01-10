@@ -16,7 +16,9 @@ Ext.define('app.data.Simulated', {
                 data: data.data
             },
             registration = {};
-
+        //如果不知道模拟接口地址应该怎么写的，可以打印或者设置断点看下data.$className，url的值
+        //url的值就是模拟接口请求地址
+        //注册模拟接口
         registration[url] = simlet;
         Ext.ux.ajax.SimManager.register(registration);
     }
